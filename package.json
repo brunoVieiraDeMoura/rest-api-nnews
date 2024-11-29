@@ -2,14 +2,14 @@
   "name": "new-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.ts",
   "watch": [
     "src"
   ],
   "ext": "ts",
-  "exec": "ts-node ./src/index.ts",
+  "exec": "ts-node ./src/server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon"
   },
   "keywords": [],
   "author": "",
