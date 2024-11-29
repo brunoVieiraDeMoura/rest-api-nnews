@@ -1,12 +1,20 @@
 import express from 'express';
-import dotenv from 'dotenv';
+import 'dotenv/config';
 import { connectDatabase } from './config/database';
+import userRoute from './routes/userRoute';
+import cors from 'cors';
 
-dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(
+  cors({
+    origin: '*',
+  }),
+);
 app.use(express.json());
+
+app.use('/api', userRoute);
 
 connectDatabase();
 
