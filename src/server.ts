@@ -2,6 +2,7 @@ import express from 'express';
 import 'dotenv/config';
 import { connectDatabase } from './config/database';
 import userRoute from './routes/userRoute';
+import textoRoute from './routes/textoRoute';
 import cors from 'cors';
 
 const app = express();
@@ -14,7 +15,8 @@ app.use(
 );
 app.use(express.json());
 
-app.use('/api', userRoute);
+app.use('/api', [userRoute, textoRoute]);
+// app.use('/api', textoRoute);
 
 connectDatabase();
 

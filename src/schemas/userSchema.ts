@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
-type IUser = Document & {
+export type IUser = Document & {
   username: string;
   email: string;
   password: string;
